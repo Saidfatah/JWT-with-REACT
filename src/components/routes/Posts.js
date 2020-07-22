@@ -1,9 +1,9 @@
 import React from 'react'
-
+import PostsContainer from '../layout/PostsContainer'
 function Posts() {
     return (
         <div>
-            posts
+            <PostsContainer/>
         </div>
     )
 }
