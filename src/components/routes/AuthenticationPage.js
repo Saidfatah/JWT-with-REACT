@@ -11,6 +11,7 @@ function AuthenticationPage() {
             axios.post('http://localhost:4000/login',{username,password})
                  .then(res=>{
                      localStorage.setItem('token',res.data.token)
+                     localStorage.setItem('rule',res.data.rule)
                      window.location.reload();
                 })
                  .catch(err=>console.log(err))

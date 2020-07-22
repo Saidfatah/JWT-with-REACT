@@ -55,7 +55,7 @@ app.post('/login',(req,res)=>{
     //here ofcourse we dont just check for password using a straigh comparason but rather hash it and all the jazz 
     const user =users.filter(user=>user.username == username && user.password == password)[0]
     if(user != undefined){
-        jwt.sign({user},'secretKey',{expiresIn:'10h'},(err,token)=>res.json({token}))
+        jwt.sign({user},'secretKey',{expiresIn:'10h'},(err,token)=>res.json({token,rule:user.rule}))
     }else
        res.sendStatus(400)
 })
