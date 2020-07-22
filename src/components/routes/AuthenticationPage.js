@@ -7,6 +7,8 @@ function AuthenticationPage() {
          if(username !== '' && password !==''){
             console.log({username,password})
             axios.post('http://localhost:4000/login',{username,password})
+                 .then(res=>console.log(res.data))
+                 .catch(err=>console.log(err))
          }
          else
          {
